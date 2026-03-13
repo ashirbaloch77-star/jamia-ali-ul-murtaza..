@@ -1,3 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+
+body {
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    font-family: "Jameel Noori Nastaliq", "Noto Nastaliq Urdu", serif;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background: #fff;
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.header { text-align: center; }
+
+.madrasa-name {
+    font-family: "Traditional Arabic", serif;
+    font-size: 45px;
+    margin: 0;
+}
+
+.bismillah-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bismillah-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.field-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label { font-weight: bold; margin-bottom: 5px; }
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.submit-btn {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -6,42 +77,13 @@ table {
 
 th, td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
 }
 
-th {
-    background-color: #000;
-    color: white;
-}
+th { background: #eee; }
 
-.edit-btn {
-    background-color: #2980b9;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin: 2px;
-}
+.edit-btn { background: #2ecc71; color: white; border: none; padding: 5px; cursor: pointer; margin-left: 5px;}
+.delete-btn { background: #e74c3c; color: white; border: none; padding: 5px; cursor: pointer; }
 
-.delete-btn {
-    background-color: #c0392b;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    margin: 2px;
-}
-.bismillah-container {
-    text-align: center;
-    margin: 10px 0 20px 0;
-}
-
-.bismillah-text {
-    font-family: "Traditional Arabic", "Sakkal Majalla", serif;
-    font-size: 28px;
-    font-weight: bold;
-    color: #000;
-    display: inline-block;
-    padding: 5px 15px;
-}
+@media (max-width: 600px) { .row { flex-direction: column; } }

@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>داخلہ ریکارڈ - جامعہ اسلامیہ علی المرتضیٰ</title>
+    <title>داخلہ فارم - جامعہ اسلامیہ علی المرتضیٰ</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="bismillah-container">
-    <div class="bismillah-text">بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیْمِ</div>v
-</div>
+
 <div class="form-wrapper">
     <div class="form-container">
+        
         <div class="header">
             <h1 class="madrasa-name">جامعہ اسلامیہ علی المرتضیٰ</h1>
             <h2 class="form-title">داخلہ مینجمنٹ سسٹم</h2>
         </div>
 
+        <div class="bismillah-container">
+            <div class="bismillah-text">بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیْمِ</div>
+        </div>
+
         <form id="madarsaForm">
             <input type="hidden" id="editIndex"> 
-            <div class="row"></div>
+            
+            <div class="row">
                 <div class="field-group">
                     <label>طالب علم کا نام:</label>
                     <input type="text" id="studentName" required>
@@ -54,11 +58,11 @@
             <button type="submit" id="submitBtn" class="submit-btn">ریکارڈ محفوظ کریں</button>
         </form>
 
-        <hr style="margin: 30px 0; border: 1px solid #eee;">
+        <hr>
 
         <h3 style="text-align: center;">موجودہ طلباء کی فہرست</h3>
         <div style="overflow-x: auto;">
-            <table id="recordTable">
+            <table>
                 <thead>
                     <tr>
                         <th>نام</th>
