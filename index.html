@@ -1,20 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ur" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jaima ali ul murtaza</title>
-    <link rel="stylesheet" href="style.css">
+    <title>جامعہ اسلامیہ علی المرتضیٰ - داخلہ سسٹم</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1a2a6c; /* گہرا نیلا */
+            --secondary-color: #b21f1f; /* گہرا سرخ */
+            --accent-color: #fdbb2d; /* سنہرا */
+            --success-color: #27ae60; /* سبز */
+        }
+
+        body {
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+            font-family: "Jameel Noori Nastaliq", "Noto Nastaliq Urdu", serif;
+            display: flex;
+            justify-content: center;
+        }
+body {
+    /* ہلکا کریم رنگ کا بیک گراؤنڈ */
+    background-color: #f4f1ea; 
+    
+    /* یہ حصہ بیک گراؤنڈ میں اسلامی پیٹرن بنائے گا */
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(26, 42, 108, 0.03) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(212, 175, 55, 0.02) 25%, transparent 25%, transparent 75%, rgba(212, 175, 55, 0.02) 75%, rgba(212, 175, 55, 0.02)),
+        linear-gradient(-45deg, rgba(212, 175, 55, 0.02) 25%, transparent 25%, transparent 75%, rgba(212, 175, 55, 0.02) 75%, rgba(212, 175, 55, 0.02));
+    background-size: 40px 40px, 80px 80px, 80px 80px;
+    
+    margin: 0;
+    padding: 20px;
+    font-family: "Jameel Noori Nastaliq", "Noto Nastaliq Urdu", serif;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.96); /* تھوڑی شفافیت تاکہ پیٹرن ہلکا سا نظر آئے */
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    border-top: 10px solid var(--primary-color);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    position: relative;
+}
+        .form-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            padding: 30px;
+            border-top: 10px solid var(--primary-color);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .madrasa-name {
+            font-family: "Traditional Arabic", "Sakkal Majalla", serif;
+            font-size: clamp(35px, 5vw, 60px);
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .form-title {
+            font-size: 20px;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-top: 5px;
+            letter-spacing: 1px;
+        }
+
+        .bismillah-container {
+            text-align: center;
+            margin: 15px 0;
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            border-bottom: 1px double #ccc;
+            padding-bottom: 10px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .field-group {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            background: #fdfdfd;
+            box-shadow: 0 0 8px rgba(26, 42, 108, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--success-color);
+            color: #fff;
+            padding: 15px;
+            font-size: 22px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #219150;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 2px dashed #ddd;
+        }
+
+        .list-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        td {
+            border: 1px solid #eee;
+            padding: 12px;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        tr:nth-child(even) { background-color: #f8f9fa; }
+
+        .edit-btn { background: #3498db; color: white; border: none; padding: 6px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; }
+        .delete-btn { background: var(--secondary-color); color: white; border: none; padding: 6px 15px; cursor: pointer; border-radius: 4px; font-family: inherit; }
+
+        @media (max-width: 600px) {
+            .field-group { min-width: 100%; }
+        }
+    </style>
 </head>
 <body>
-    <div class="box">
-        <label for="login"></label>
- <button class="login">login</button>
- <br>
-    <label for="signup"></label>
-    <button class="sigunp"></button>
 
-
+<div class="form-container">
+    <div class="header">
+        <h1 class="madrasa-name">جامعہ اسلامیہ علی المرتضیٰ</h1>
+        <div class="form-title">داخلی نظام برائے طلباء</div>
     </div>
+
+    <div class="bismillah-container">بِسْمِ اللہِ الرَّحْمٰنِ الرَّحِیْمِ</div>
+
+    <form id="madarsaForm">
+        <input type="hidden" id="editIndex">
+        
+        <div class="row">
+            <div class="field-group">
+                <label>طالب علم کا نام:</label>
+                <input type="text" id="studentName" placeholder="نام لکھیں" required>
+            </div>
+            <div class="field-group">
+                <label>والد کا نام:</label>
+                <input type="text" id="fatherName" placeholder="والد کا نام لکھیں" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field-group">
+                <label>عمر (سال):</label>
+                <input type="number" id="age" placeholder="عمر درج کریں" required>
+            </div>
+            <div class="field-group">
+                <label>مطلوبہ درجہ:</label>
+                <select id="darja" required>
+                    <option value="">درجہ منتخب کریں</option>
+                    <option value="الأولى">الأولى</option>
+                    <option value="الثانية">الثانية</option>
+                    <option value="الثالثة">الثالثة</option>
+                    <option value="الرابعة">الرابعة</option>
+                    <option value="الخامسة">الخامسة</option>
+                    <option value="السادسة">السادسة</option>
+                    <option value="السابعة">السابعة</option>
+                    <option value="الثامنة">الثامنة</option>
+                </select>
+            </div>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn">ریکارڈ محفوظ کریں</button>
+    </form>
+
+    <hr>
+
+    <h3 class="list-title">داخل شدہ طلباء کی فہرست</h3>
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>نام</th>
+                    <th>والد کا نام</th>
+                    <th>درجہ</th>
+                    <th>عمر</th>
+                    <th>انتظامات</th>
+                </tr>
+            </thead>
+            <tbody id="recordList"></tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    // ڈیٹا لوڈ کرنا
+    let students = JSON.parse(localStorage.getItem('madarsaData')) || [];
+    const form = document.getElementById('madarsaForm');
+    const recordList = document.getElementById('recordList');
+    const submitBtn = document.getElementById('submitBtn');
+    const editIndexField = document.getElementById('editIndex');
+
+    // لسٹ دکھانے کا فنکشن
+    function displayRecords() {
+        recordList.innerHTML = "";
+        students.forEach((data, index) => {
+            recordList.innerHTML += `
+                <tr>
+                    <td>${data.name}</td>
+                    <td>${data.father}</td>
+                    <td style="color: #b21f1f; font-weight: bold;">${data.darja}</td>
+                    <td>${data.age}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editRecord(${index})">تبدیل</button>
+                        <button class="delete-btn" onclick="deleteRecord(${index})">ختم</button>
+                    </td>
+                </tr>`;
+        });
+    }
+
+    // ڈیٹا محفوظ کرنے کا فنکشن
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const studentData = {
+            name: document.getElementById('studentName').value,
+            father: document.getElementById('fatherName').value,
+            age: document.getElementById('age').value,
+            darja: document.getElementById('darja').value // درجہ یہاں سے جاوا اسکرپٹ میں آرہا ہے
+        };
+
+        const index = editIndexField.value;
+
+        if (index === "") {
+            students.push(studentData);
+        } else {
+            students[index] = studentData;
+            editIndexField.value = "";
+            submitBtn.innerText = "ریکارڈ محفوظ کریں";
+            submitBtn.style.background = "#27ae60";
+        }
+
+        localStorage.setItem('madarsaData', JSON.stringify(students));
+        form.reset();
+        displayRecords();
+    });
+
+    // ڈیلیٹ فنکشن
+    window.deleteRecord = function(index) {
+        if (confirm("کیا آپ واقعی یہ ریکارڈ ختم کرنا چاہتے ہیں؟")) {
+            students.splice(index, 1);
+            localStorage.setItem('madarsaData', JSON.stringify(students));
+            displayRecords();
+        }
+    }
+
+    // ایڈٹ فنکشن
+    window.editRecord = function(index) {
+        const data = students[index];
+        document.getElementById('studentName').value = data.name;
+        document.getElementById('fatherName').value = data.father;
+        document.getElementById('age').value = data.age;
+        document.getElementById('darja').value = data.darja;
+        
+        editIndexField.value = index;
+        submitBtn.innerText = "معلومات اپڈیٹ کریں";
+        submitBtn.style.background = "#3498db";
+        window.scrollTo(0, 0);
+    }
+
+    // صفحہ کھلتے ہی لسٹ دکھائیں
+    displayRecords();
+</script>
+
 </body>
 </html>
